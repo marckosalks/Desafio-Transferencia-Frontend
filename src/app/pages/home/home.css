@@ -62,7 +62,7 @@
 }
 
 .action-btn {
-  background-color: #00826b;
+  background-color: #C5AA4D;
   color: white;
   border: none;
   border-radius: 8px;
@@ -74,9 +74,14 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.consultar-agendamento {
+  background-color: #00826b;
+}
+
 .action-btn:hover {
+
   background-color: #006654;
-  transform: translateY(-2px);
+
 }
 
 .action-btn:active {
