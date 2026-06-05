@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { NgxMaskDirective } from 'ngx-mask';
 import { TransferenciaService } from '../../service/transferencia-service';
 import { TransferenciaDTO } from '../../models/transferencia.model';
@@ -11,7 +12,8 @@ import { ToastrService } from 'ngx-toastr';
   imports: [
     ReactiveFormsModule,
     CommonModule,
-    NgxMaskDirective
+    NgxMaskDirective,
+    RouterLink
   ],
   templateUrl: './agendar.html',
   styleUrl: './agendar.css',
