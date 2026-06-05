@@ -1,1 +1,10 @@
-<p>home works!</p>
+<div class="carousel-wrapper">
+    <div class="carousel-slide" *ngFor="let slide of slides; let i = index" [class.active]="i === currentIndex">
+        <img [src]="slide.image" [alt]="slide.alt" class="carousel-image">
+    </div>
+</div>
+
+<div class="actions-container">
+    <button routerLink="/agendar" class="action-btn">Agendar</button>
+    <button routerLink="/consultar-agendamento" class="action-btn">Consultar Agendamento</button>
+</div>
