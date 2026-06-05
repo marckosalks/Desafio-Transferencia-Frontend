@@ -1,1 +1,55 @@
-<p>agendar works!</p>
+<div class="topbar">
+    <div class="topbar-title">
+        <i class="ti ti-transfer" aria-hidden="true" style="font-size:20px;color:#185FA5"></i>
+        Transferências
+    </div>
+    <div class="tabs">
+        <button class="tab" style="background-color: #C5AA4D; border-color: #C5AA4D; color: #fff;"
+            onclick="showTab('extrato', this)">
+            <i class="ti ti-list" aria-hidden="true"></i> Extrato
+        </button>
+    </div>
+</div>
+
+
+<div class="card-title">Nova transferência</div>
+<form [formGroup]="transferenciaForm" (ngSubmit)="agendar()" class="card">
+
+    <div class="form-grid">
+
+        <div class="form-group">
+            <label for="origem">Conta de origem</label>
+            <input id="origem" type="text" mask="00000000-0" [dropSpecialCharacters]="false" placeholder="00000000-0" formControlName="contaOrigem">
+        </div>
+
+        <div class="form-group">
+            <label for="destino">Conta de destino</label>
+            <input id="destino" type="text" mask="00000000-0" [dropSpecialCharacters]="false" placeholder="00000000-0" formControlName="contaDestino">
+        </div>
+
+        <div class="form-group">
+            <label for="valor">Valor (R$)</label>
+            <input id="valor" type="text" mask="separator.2" thousandSeparator="." decimalMarker="," prefix="R$ "
+                placeholder="R$ 0,00" formControlName="valor">
+        </div>
+
+        <div class="form-group">
+            <label for="dataTransf">Data de transferência</label>
+            <input id="dataTransf" type="date" formControlName="dataTransferencia">
+        </div>
+    </div>
+
+    <div class="alert" *ngIf="erroTaxa">
+        <i class="ti ti-alert-circle"></i>
+        <span>{{ mensagemErro }}</span>
+    </div>
+
+    <button type="submit" class="btn-primary" [disabled]="transferenciaForm.invalid"
+        style="background-color: #00826b; border-color: #00826b; color: #fff;">
+
+        <i class="ti ti-check"></i>
+        Confirmar agendamento
+
+    </button>
+
+</form>
