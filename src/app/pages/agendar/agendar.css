@@ -3,9 +3,16 @@
 ========================= */
 :host {
     display: block;
+<<<<<<< HEAD
     min-height: 100vh;
     padding: 24px;
     overflow-x: hidden;
+=======
+    max-width: 1248px;
+    margin: 0 auto;
+    padding: 24px;
+    min-height: 100vh;
+>>>>>>> ff5484bbef6ad1a0b2f92f4cb0b0b6060a3f7d3a
     font-family: Inter, sans-serif;
 }
 

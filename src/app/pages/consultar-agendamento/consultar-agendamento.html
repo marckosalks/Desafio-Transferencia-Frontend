@@ -1,1 +1,43 @@
-<p>consultar-agendamento works!</p>
+<div class="topbar">
+    <div class="topbar-title">
+        <i class="ti ti-table" aria-hidden="true" style="font-size:20px;color:#fff"></i>
+        Meus Agendamentos
+    </div>
+
+    <div class="tabs">
+        <button class="tab" style="background-color: #00826b; border-color: #00826b; color: #fff;"
+            [routerLink]="['/agendar']">
+            <i class="ti ti-calendar-plus" aria-hidden="true"></i> Agendar
+        </button>
+    </div>
+</div>
+
+<div class="card">
+    <table class="taxa-table">
+        <thead>
+            <tr>
+                <th>Origem</th>
+                <th>Destino</th>
+                <th>Valor</th>
+                <th>Taxa</th>
+                <th>Total</th>
+                <th>Data Transf.</th>
+                <th>Data Agend.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of agendamentos">
+                <td>{{ item.contaOrigem }}</td>
+                <td>{{ item.contaDestino }}</td>
+                <td>{{ item.valorTransferencia | currency:'BRL':'symbol':'1.2-2' }}</td>
+                <td>{{ item.valorTaxa | currency:'BRL':'symbol':'1.2-2' }}</td>
+                <td>{{ item.valorTotalTransferencia | currency:'BRL':'symbol':'1.2-2' }}</td>
+                <td>{{ item.dataTransferencia | date:'dd/MM/yyyy' }}</td>
+                <td>{{ item.dataAgendamento | date:'dd/MM/yyyy' }}</td>
+            </tr>
+            <tr *ngIf="agendamentos.length === 0">
+                <td colspan="7" style="text-align: center; color: #888;">Nenhum agendamento encontrado.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
