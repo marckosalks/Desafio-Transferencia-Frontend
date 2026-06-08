@@ -63,34 +63,36 @@
 .taxa-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
-.taxa-table th,
-.taxa-table td {
-    padding: 14px 16px;
-    text-align: left;
-    border-bottom: 1px solid #888;
+.taxa-table thead {
+    background: #f5f7fa;
 }
 
 .taxa-table th {
-    font-size: 13px;
-    font-weight: 600;
-    color: #888;
+    padding: 10px 8px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
     text-transform: uppercase;
+    color: #6b7280;
+    border-bottom: 2px solid #e5e7eb;
 }
 
 .taxa-table td {
+    padding: 6px 8px;
     font-size: 14px;
+    border-bottom: 1px solid #f3f4f6;
 }
 
-.taxa-table tbody tr {
-    transition: background-color 0.2s ease;
+.taxa-table tbody tr:nth-child(even) {
+    background: #fafafa;
 }
 
 .taxa-table tbody tr:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    /* Efeito sutil ao passar o mouse */
+    background: #eef6ff;
 }
 
 .taxa-table tbody tr:last-child td {
